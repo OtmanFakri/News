@@ -10,7 +10,7 @@ services:
       - "8000:8000"
 
   front-end:
-    build: ./front-end
+    build: ./frontend
     command: ["npm", "start"]
     volumes:
       - ./frontend:/app/frontend
