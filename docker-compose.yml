@@ -3,7 +3,7 @@ services:
 
   django:
     build: ./backend
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["python", "/app/backend/manage.py", "runserver", "0.0.0.0:8090"]
     volumes:
       - ./backend:/app/backend
     ports:
@@ -12,6 +12,8 @@ services:
   front-end:
     build: ./frontend
     command: ["npm", "start"]
+    environment:
+      - CHOKDIR_USERPOOLING=true
     volumes:
       - ./frontend:/app/frontend
       - node-modules:/app/frontend/node_modules
